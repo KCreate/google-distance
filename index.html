@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>google-distance</title>
+		<script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link rel="import" href="../bower_components/paper-material/paper-material.html">
+		<link rel="import" href="../bower_components/paper-button/paper-button.html">
+		<link rel="import" href="../bower_components/paper-card/paper-card.html">
+		<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+		<link rel="import" href="../bower_components/paper-input/paper-input.html">
+		<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+		<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+		<link rel="import" href="../bower_components/google-apis/google-maps-api.html">
+		<link rel="import" href="google-distance.html">
+		<link rel="import" href="../md-dropdown/md-dropdown.html">
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<style media="screen">
+			* {
+				font-family: "Roboto", sans-serif;
+			}
+			body {
+				background-color: #3D5AFE;
+			}
+			.wrapper {
+				width: 450px;
+			}
+			.wrapper>paper-card {
+				width: 100%;
+				margin-bottom: 16px;
+			}
+			.highlight {
+				color: #3D5AFE;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<google-distance
+				api-key="AIzaSyBb6WVdThpRbgWMT5uLNIrzWmV8AYrI2X4"
+				last-response="{{lastResponse}}"
+			></google-distance>
+			<md-dropdown heading="Description">
+				<span class="highlight">google-distance</span> is a small Polymer-element written in Javascript that allows the user to input any address or location into the two textfields. It then sends a request to the <span class="highlight">google maps javascript api</span> and displays the duration and distance inside the element. The developer needs to set the api-key as an attribute. More info the attributes tab.
+			</md-dropdown>
+			<md-dropdown heading="Attributes">
+				Element attributes
+				<p>
+					<span class="highlight">origin</span>: The origin where the user starts
+				</p>
+				<p>
+					<span class="highlight">destination</span>: The destination where the user will end up
+				</p>
+				<p>
+					<span class="highlight">api-key</span>: Your API-Key from the Google Developer Console
+				</p>
+				<p>
+					<span class="highlight">duration</span>: The duration it takes to get from the origin to the destination
+				</p>
+				<p>
+					<span class="highlight">distance</span>: Distance between the origin and destination
+				</p>
+				<p>
+					<span class="highlight">last-response</span>: The last API-response as a json-string
+				</p>
+				<p>
+					<span class="highlight">validResults</span>: Boolean that is true when the response is valid. <span class="highlight">ZERO_RESULTS</span> or <span class="highlight">NO_ROUTE_FOUND</span> will set this to false.
+				</p>
+			</md-dropdown>
+		</div>
+	</body>
+</html>
